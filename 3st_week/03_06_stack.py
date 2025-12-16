@@ -13,11 +13,15 @@ class Stack:
         self.head = new_head # self.head -> [3]
 
     def pop(self):
+        if self.is_empty():
+            print("stack is empty")
         deleted_head = self.head
         self.head = self.head.next
         return deleted_head
 
     def peek(self):
+        if self.is_empty():
+            print("stack is empty")
         return self.head.data
 
     def is_empty(self):
