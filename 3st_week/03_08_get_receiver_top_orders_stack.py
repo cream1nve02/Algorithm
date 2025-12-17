@@ -11,11 +11,12 @@ top_heights = [6, 9, 5, 7, 4]
 def get_receiver_top_orders(heights):
     answer = [0] * len(heights) # 아무 것도 못 받으면 0으로 반환!
 
+    # O(N)
     while heights: # 해당 stack이 비어있지 않다면 계속 반복해라.
         height = heights.pop()
         #            0  1  2  3
         # heights = [6, 9, 5, 7]
-        for i in range(len(heights) - 1, -1, -1):
+        for i in range(len(heights) - 1, -1, -1): # O(N)
             if height <= heights[i]:
                 answer[len(heights)] = i + 1
                 break
